@@ -20,7 +20,16 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const coord = Object.assign({}, params) || {};
+  return (args) => {
+    if (args === undefined) {
+      return coord;
+    }
+    for (const item of Object.keys(args)) {
+      coord[item] = args[item];
+    }
+    return coord;
+  };
 }
 
 module.exports = connect;

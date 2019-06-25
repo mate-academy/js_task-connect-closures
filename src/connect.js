@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Write a function (factory) accepting `baseParams` object and creating a
  * function (device). Device receives `extraParams` and returns an object with
@@ -20,7 +19,10 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
-}
-
+  return function connected1(extraParams) {
+    const result = {};
+    Object.assign(result, params, extraParams);
+    return result;
+  };
+};;
 module.exports = connect;

@@ -20,7 +20,23 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const newObj = {};
+
+  if (params) {
+    for (const key in params) {
+      newObj[key] = params[key];
+    }
+  }
+
+  return extraParams => {
+    if (extraParams) {
+      for (const key in extraParams) {
+        newObj[key] = extraParams[key];
+      }
+    }
+
+    return newObj;
+  };
 }
 
 module.exports = connect;

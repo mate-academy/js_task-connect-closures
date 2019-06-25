@@ -19,8 +19,15 @@
  * @param {Object} baseParams
  * @return {Function}
  */
+
 function connect(params) {
-  // write code here
+  function device(value) {
+    if (params === undefined && value === undefined) {
+      return {};
+    }
+    return Object.assign({}, params, value);
+  }
+  return device;
 }
 
 module.exports = connect;

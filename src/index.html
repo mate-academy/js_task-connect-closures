@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function connect(params) {
+    let obj = {};
+    for (const param in params) {
+      obj[param] = params[param]
+    }
+
+    return  connectClosure = paramsClosure => {
+      for (const param in paramsClosure) {
+        obj[param] = paramsClosure[param];
+      }
+    };
+    return obj;
+
+  }
+(connect({ x: 1, y: 2 }));
+(result1 = connect({ z: 3, x: 10 }));
+  // * const connected1 = connect({ x: 1, y: 2 });
+  // * const result1 = connected1({ z: 3, x: 10 });
+  // * result1 is { x: 10, y: 2, z: 3 }
+</script>
+</body>
+</html>

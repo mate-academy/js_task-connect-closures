@@ -25,19 +25,6 @@ function connect(params) {
     baseParams[i] = params[i];
   }
   const device = (extraParams) => {
-    if (!baseParams && !extraParams) {
-      return {};
-    }
-    if (!baseParams) {
-      return extraParams;
-    }
-    for (const i in extraParams) {
-      for (const k in baseParams) {
-        if (i === k) {
-          baseParams[k] = extraParams[i];
-        }
-      }
-    }
     return Object.assign(baseParams, extraParams);
   };
 

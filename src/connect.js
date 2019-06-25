@@ -19,8 +19,12 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(baseParams) {
+  return function device(extraParams) {
+    const args = { ...baseParams, ...extraParams };
+
+    return args;
+  };
 }
 
 module.exports = connect;

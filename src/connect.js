@@ -19,8 +19,8 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(obj) {
-  const result = obj ? { ...obj } : {};
+function connect(params) {
+  const result = params ? { ...params } : {};
   return arg => {
     for (const i in arg) {
       result[i] = arg[i];

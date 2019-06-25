@@ -21,6 +21,11 @@
  */
 function connect(params) {
   // write code here
+  let enterParams = Object.assign({}, params);
+  return function(newParams) {
+    enterParams = Object.assign(enterParams, newParams);
+    return enterParams;
+  };
 }
 
 module.exports = connect;

@@ -20,18 +20,18 @@
  * @return {Function}
  */
 
-const connect = a => {
+const connect = baseParams => {
   const result = {};
-  if (a) {
-    for (const i in a) {
-      result[i] = a[i];
+  if (baseParams) {
+    for (const i in baseParams) {
+      result[i] = baseParams[i];
     }
   }
 
-  return (b) => {
-    if (b) {
-      for (const i in b) {
-        result[i] = b[i];
+  return (extraParams) => {
+    if (extraParams) {
+      for (const i in extraParams) {
+        result[i] = extraParams[i];
       }
     }
 

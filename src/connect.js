@@ -19,8 +19,22 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(baseParams) {
+  return function connection(extraParams) {
+    const returnedParams = {};
+
+    for (const key in extraParams) { // записываем приоритетные значения
+      returnedParams[key] = extraParams[key];
+    }
+
+    for (const key in baseParams) { // дописываем те, которых не хватает
+      if (!returnedParams[key]) {
+        returnedParams[key] = baseParams[key];
+      }
+    }
+
+    return returnedParams;
+  };
 }
 
 module.exports = connect;

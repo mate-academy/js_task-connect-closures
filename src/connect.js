@@ -19,8 +19,24 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
-}
+
+const connect = a => {
+  const result = {};
+  if (a) {
+    for (const i in a) {
+      result[i] = a[i];
+    }
+  }
+
+  return (b) => {
+    if (b) {
+      for (const i in b) {
+        result[i] = b[i];
+      }
+    }
+
+    return result;
+  };
+};
 
 module.exports = connect;

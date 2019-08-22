@@ -20,10 +20,10 @@
  * @return {Function}
  */
 function connect(params = {}) {
-  const baseObj = { ...params };
+  const baseObj = params;
 
   return (extraParam) => {
-    const extraObj = Object.assign({}, baseObj, { ...extraParam });
+    const extraObj = Object.assign({}, baseObj, extraParam);
 
     return extraObj;
   };

@@ -23,11 +23,7 @@ function connect(params = {}) {
   const baseObj = { ...params };
 
   return (extraParam) => {
-    const extraObj = Object.assign({}, baseObj);
-
-    for (const key in extraParam) {
-      extraObj[key] = extraParam[key];
-    }
+    const extraObj = Object.assign({}, baseObj, { ...extraParam });
 
     return extraObj;
   };

@@ -20,7 +20,19 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const resultParamsObject = Object.assign({}, params);
+
+  return (extraParams) => {
+    if (extraParams) {
+      Object
+        .entries(extraParams)
+        .forEach(function(item) {
+          resultParamsObject[item[0]] = item[1];
+        });
+    }
+
+    return resultParamsObject;
+  };
 }
 
 module.exports = connect;

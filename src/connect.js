@@ -20,7 +20,11 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const currentParams = params;
+
+  return (newParams) => {
+    return { ...currentParams, ...newParams };
+  };
 }
 
 module.exports = connect;

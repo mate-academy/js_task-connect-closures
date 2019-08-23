@@ -19,8 +19,26 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(baseParams) {
+  return (extraParams) => {
+    const result = {};
+    if (baseParams && extraParams) {
+      Object.entries(extraParams).forEach(([extraKey, extraValue]) => {
+        result[extraKey] = extraValue;
+        Object.entries(baseParams).forEach(([baseKey, baseValue]) => {
+          if (baseKey !== extraKey) {
+            result[baseKey] = baseValue;
+          }
+        });
+      });
+    } else if (!baseParams && extraParams) {
+      return extraParams;
+    } else if (baseParams && !extraParams) {
+      return baseParams;
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

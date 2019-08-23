@@ -20,7 +20,43 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let arrFactory;
+  if (params !== undefined) {
+    arrFactory = Object.entries(params);
+  };
+  const concatedObject = {};
+
+  function addParamToObj(arg) {
+    if (params === undefined && arg === undefined) {
+      return concatedObject;
+    } else if (arg === undefined) {
+      return params;
+    } else if (params === undefined) {
+      return arg;
+    } else {
+      arrFactory.forEach((num, index) => {
+        if (arg[num[0]]) {
+          concatedObject[num[0]] = arg[num[0]];
+        } else {
+          concatedObject[num[0]] = num[1];
+        }
+
+        if (index === arrFactory.length - 1) {
+          Object.entries(arg).forEach(element => {
+            if (arrFactory.reduce((acum, value) => acum
+              .concat(value), [])
+              .indexOf(element[0]) === -1) {
+              concatedObject[element[0]] = element[1];
+            }
+          });
+        }
+      });
+
+      return concatedObject;
+    }
+  }
+
+  return addParamToObj;
 }
 
 module.exports = connect;

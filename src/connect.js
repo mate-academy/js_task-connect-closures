@@ -32,6 +32,7 @@ function connect(params) {
 
     return obj;
   };
+
   return device;
 }
 

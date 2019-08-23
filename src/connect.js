@@ -21,6 +21,18 @@
  */
 function connect(params) {
   // write code here
+  const obj = { ...params };
+
+  const device = extraParams => {
+    const obj2 = extraParams;
+
+    for (const key in obj2) {
+      obj[key] = obj2[key];
+    }
+
+    return obj;
+  };
+  return device;
 }
 
 module.exports = connect;

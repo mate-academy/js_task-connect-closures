@@ -19,9 +19,7 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  const baseParams = params;
-
+function connect(baseParams) {
   return function device(extraParams) {
     return Object.assign({}, baseParams, extraParams);
   };

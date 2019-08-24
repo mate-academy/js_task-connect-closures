@@ -20,8 +20,8 @@
  * @return {Function}
  */
 function connect(params) {
-  return (extraparams) => {
-    return { ...params, ...extraparams };
+  return extraParams => {
+    return { ...params, ...extraParams };
   };
 }
 

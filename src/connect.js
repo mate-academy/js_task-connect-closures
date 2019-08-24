@@ -20,11 +20,8 @@
  * @return {Function}
  */
 function connect(params) {
-  const givenParams = params;
-
-  return (extraParams) => {
-    const givenExtraParams = Object.assign({}, givenParams, extraParams);
-
+  return extraParams => {
+    const givenExtraParams = Object.assign({}, params, extraParams);
     return givenExtraParams;
   };
 }

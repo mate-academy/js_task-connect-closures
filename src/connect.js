@@ -21,7 +21,7 @@
  */
 
 function connect(params) {
-  return function(extraParams) {
+  return extraParams => {
     return { ...params, ...extraParams };
   };
 }

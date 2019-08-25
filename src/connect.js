@@ -19,10 +19,8 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  const baseParams = params;
-
-  return extraParams => Object.assign({}, baseParams, extraParams);
+function connect(baseParams) {
+  return extraParams => ({ ...baseParams, ...extraParams });
 }
 
 module.exports = connect;

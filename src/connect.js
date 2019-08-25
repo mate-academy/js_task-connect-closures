@@ -22,7 +22,7 @@
 function connect(params) {
   const baseParams = params;
 
-  return (extraParams) => Object.assign({}, baseParams, extraParams);
+  return extraParams => Object.assign({}, baseParams, extraParams);
 }
 
 module.exports = connect;

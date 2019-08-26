@@ -19,19 +19,9 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  const resultParamsObject = Object.assign({}, params);
-
-  return (extraParams) => {
-    if (extraParams) {
-      Object
-        .entries(extraParams)
-        .forEach(function(item) {
-          resultParamsObject[item[0]] = item[1];
-        });
-    }
-
-    return resultParamsObject;
+function connect(params = {}) {
+  return (extraParams = {}) => {
+    return { ...params, ...extraParams };
   };
 }
 

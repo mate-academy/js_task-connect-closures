@@ -21,12 +21,7 @@
  */
 
 function connect(params) {
-  let parametrs = { ...params };
-
-  return function() {
-    parametrs = { ...parametrs, ...arguments[0] };
-    return parametrs;
-  };
+  return (args) => ({ ...params, ...args });
 }
 
 module.exports = connect;

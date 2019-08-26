@@ -21,10 +21,7 @@
  */
 function connect(params) {
   // write code here
-  const oldParams = params;
-  return function(newParams) {
-    return { ...oldParams, ...newParams };
-  };
+  return (newParams) => ({ ...params, ...newParams });
 }
 
 module.exports = connect;

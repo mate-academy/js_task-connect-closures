@@ -20,10 +20,8 @@
  * @return {Function}
  */
 function connect(params) {
-  const mainObj = params;
-
-  return function(extra) {
-    return { ...mainObj, ...extra };
+  return (extraParams) => {
+    return { ...params, ...extraParams };
   };
 }
 

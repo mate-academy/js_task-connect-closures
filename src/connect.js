@@ -21,7 +21,7 @@
  */
 function connect(...baseParams) {
   return function device(...extraParams) {
-    return Object.assign({}, baseParams, extraParams);
+    return Object.assign({}, ...baseParams, ...extraParams);
   };
 }
 

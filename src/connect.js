@@ -19,8 +19,8 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(baseParams) {
-  return function device(extraParams) {
+function connect(...baseParams) {
+  return function device(...extraParams) {
     return Object.assign({}, baseParams, extraParams);
   };
 }

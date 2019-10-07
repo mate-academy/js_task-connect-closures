@@ -27,8 +27,9 @@ function connect(params) {
   return (extraParams) => {
     if (extraParams === undefined) {
       return obj;
+    } else {
+      return { ...obj, ...extraParams };
     }
-    return Object.assign({}, obj, extraParams);
   };
 }
 

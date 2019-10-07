@@ -19,8 +19,14 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(baseParams) {
+  const baseObject = { ...baseParams };
+  return (extraParams) => {
+    for (const key in extraParams) {
+      baseObject[key] = extraParams[key];
+    }
+    return baseObject;
+  };
 }
 
 module.exports = connect;

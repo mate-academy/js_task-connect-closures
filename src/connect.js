@@ -20,7 +20,20 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const baseObject = {};
+  if (params !== undefined && params !== null) {
+    for (const [key, value] of Object.entries(params)) {
+      baseObject[key] = value;
+    }
+  }
+  return (obj) => {
+    if (obj !== undefined && obj !== null) {
+      for (const [key, value] of Object.entries(obj)) {
+        baseObject[key] = value;
+      }
+    }
+    return baseObject;
+  };
 }
 
 module.exports = connect;

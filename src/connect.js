@@ -22,8 +22,8 @@
 function connect(params) {
   const baseParams = {};
 
-  return (extraPamams) => {
-    Object.assign(baseParams, params, extraPamams);
+  return (extraParams) => {
+    Object.assign(baseParams, params, extraParams);
     return baseParams;
   };
 }

@@ -16,11 +16,18 @@
  * const result1 = connected1();
  * result1 is { x: 1, y: 2 }
  *
- * @param {Object} baseParams
- * @return {Function}
+ * @param {Object} baseParams * @return {Function}
  */
 function connect(params) {
-  // write code here
+  return (extraParams) => {
+    if (params === undefined && extraParams === undefined) {
+      return {};
+    }
+    if (extraParams === undefined) {
+      return params;
+    }
+    return Object.assign({}, params, extraParams);
+  };
 }
 
 module.exports = connect;

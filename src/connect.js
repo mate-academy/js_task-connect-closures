@@ -20,14 +20,7 @@
  * @return {Function}
  */
 function connect(params = 0) {
-  const rezultObj = { ...params };
-  return function addParams(args = rezultObj) {
-    for (const i of Object.entries(args)) {
-      rezultObj[i[0]] = i[1];
-    }
-
-    return rezultObj || {};
-  };
+  return (extraParams) => ({ ...params, ...extraParams });
 }
 
 module.exports = connect;

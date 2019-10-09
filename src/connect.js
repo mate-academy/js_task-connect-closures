@@ -21,15 +21,7 @@
  */
 function connect(params) {
 
-  const paramsList = Object.assign({}, params)
-
-  return (paramsEstra) => {
-
-    for (const key in paramsEstra) {
-      paramsList[key] = paramsEstra[key];
-    }
-    return paramsList;
-  }
+  return (paramsEstra) => ({ ...params, ... paramsEstra });
 }
 
 module.exports = connect;

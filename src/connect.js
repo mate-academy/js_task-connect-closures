@@ -20,13 +20,7 @@
  * @return {Function}
  */
 function connect(params) {
-  let result;
-
-  return (addObj) => {
-    result = { ...params, ...addObj };
-
-    return result;
-  };
+  return (extraParams) => ({ ...params, ...extraParams });
 }
 
 module.exports = connect;

@@ -20,7 +20,12 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const baseParams = params;
+  let overalParam = {};
+  return function(extraParams) {
+    overalParam = { ...baseParams, ...extraParams };
+    return overalParam;
+  };
 }
 
 module.exports = connect;

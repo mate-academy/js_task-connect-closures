@@ -19,15 +19,7 @@
  * @param {Object} baseParams * @return {Function}
  */
 function connect(params) {
-  return (extraParams) => {
-    if (params === undefined && extraParams === undefined) {
-      return {};
-    }
-    if (extraParams === undefined) {
-      return params;
-    }
-    return Object.assign({}, params, extraParams);
-  };
+  return (extraParams = {}) => ({ ...params, ...extraParams });
 }
 
 module.exports = connect;

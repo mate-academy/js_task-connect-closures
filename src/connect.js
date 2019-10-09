@@ -20,15 +20,7 @@
  * @return {Function}
  */
 function connect(params) {
-  const baseObj = params ? params : {};
-
-  return (extraParams) => {
-    if (extraParams === undefined) {
-      return baseObj;
-    }
-
-    return Object.assign({}, baseObj, extraParams);
-  };
+  return (extraParams) => ({...params, ...extraParams});
 }
 
 module.exports = connect;

@@ -20,9 +20,7 @@
  * @return {Function}
  */
 function connect(params) {
-  return function(extraParams) {
-    return { ...params, ...extraParams };
-  };
+  return extraParams => ({ ...params, ...extraParams });
 }
 
 module.exports = connect;

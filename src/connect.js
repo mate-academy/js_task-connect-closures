@@ -20,7 +20,10 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const res = {};
+  return function(args) {
+    return Object.assign(res, params, args);
+  };
 }
 
 module.exports = connect;

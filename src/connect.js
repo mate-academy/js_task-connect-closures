@@ -20,11 +20,6 @@
  * @return {Function}
  */
 function connect(params) {
-  const editedParams = { ...params };
-  return (extraParams) => {
-    Object.assign(editedParams, extraParams);
-    return editedParams;
-  };
+  return (extraParams) => ({ ...params, ...extraParams });
 }
-
 module.exports = connect;

@@ -20,17 +20,8 @@
  * @return {Function}
  */
 function connect(params) {
-  let obj = {};
-  if (params !== undefined) {
-    obj = params;
-  }
-  return (extraParams) => {
-    if (extraParams === undefined) {
-      return obj;
-    } else {
-      return { ...obj, ...extraParams };
-    }
-  };
+  const obj = params ? { ...params } : {};
+  return (extraParams) => extraParams ? { ...obj, ...extraParams } : obj;
 }
 
 module.exports = connect;

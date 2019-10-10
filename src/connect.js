@@ -20,17 +20,7 @@
  * @return {Function}
  */
 function connect(baseParams) {
-  const obj = { ...baseParams };
-  return (extraParams) => {
-    for (const key in extraParams) {
-      if (key in obj) {
-        obj[key] = extraParams[key];
-      }
-      obj[key] = extraParams[key];
-    }
-
-    return obj;
-  };
+  return (extraParams) => ({ ...baseParams, ...extraParams });
 }
 
 module.exports = connect;

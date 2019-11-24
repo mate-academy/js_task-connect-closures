@@ -20,7 +20,18 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let position = { ...params };
+  if (!position) {
+    position = {};
+  };
+
+  return function(coordinates) {
+    for (const key in coordinates) {
+      position[key] = coordinates[key];
+    };
+
+    return position;
+  };
 }
 
 module.exports = connect;

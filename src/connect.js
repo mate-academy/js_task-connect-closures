@@ -19,8 +19,12 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(params = {}) {
+  const clone = Object.assign({}, params);
+
+  return function(extra = {}) {
+    return Object.assign(clone, extra);
+  };
 }
 
 module.exports = connect;

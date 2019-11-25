@@ -19,8 +19,13 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(params = {}) {
+  const baseParams = params;
+  const returnedObj = {};
+
+  return function(extraParams) {
+    return Object.assign(returnedObj, baseParams, extraParams);
+  };
 }
 
 module.exports = connect;

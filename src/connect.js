@@ -20,9 +20,8 @@
  * @return {Function}
  */
 function connect(baseParams = {}) {
-  const allParams = { ...baseParams };
   return (extraParams = {}) => {
-    return { ...allParams, ...extraParams };
+    return { ...baseParams, ...extraParams };
   };
 }
 

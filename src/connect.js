@@ -16,11 +16,21 @@
  * const result1 = connected1();
  * result1 is { x: 1, y: 2 }
  *
- * @param {Object} baseParams
  * @return {Function}
+ * @param params
  */
 function connect(params) {
-  // write code here
+  const result = { ...params };
+
+  return function f(obj) {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        result[key] = obj[key];
+      }
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

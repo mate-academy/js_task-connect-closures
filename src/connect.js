@@ -19,17 +19,10 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(baseParams) {
-  const allParams = { ...baseParams } || {};
-  return (extraParams) => {
-    if (!extraParams) {
-      return allParams;
-    } else {
-      for (const key in extraParams) {
-        allParams[key] = extraParams[key];
-      }
-      return allParams;
-    }
+function connect(baseParams = {}) {
+  const allParams = { ...baseParams };
+  return (extraParams = {}) => {
+    return { ...allParams, ...extraParams };
   };
 }
 

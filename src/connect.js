@@ -20,7 +20,26 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const objectOfParams = {};
+  const addKeys = function(insideParams) {
+    for (const key in params) {
+      if (objectOfParams.hasOwnProperty(key)) {
+        continue;
+      }
+      objectOfParams[key] = params[key];
+    }
+
+    for (const key in insideParams) {
+      if (objectOfParams.hasOwnProperty(key)) {
+        delete objectOfParams[key];
+      }
+      objectOfParams[key] = insideParams[key];
+    }
+
+    return objectOfParams;
+  };
+
+  return addKeys;
 }
 
 module.exports = connect;

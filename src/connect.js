@@ -20,17 +20,15 @@
  * @return {Function}
  */
 function connect(params) {
-  let prevObj = { ...params };
+  let object = { ...params };
 
-  return function(obj) {
-    prevObj = {
-      ...prevObj,
-      ...obj,
+  return function(values) {
+    object = {
+      ...object,
+      ...values,
     };
 
-    return {
-      ...prevObj,
-    };
+    return object;
   };
 }
 

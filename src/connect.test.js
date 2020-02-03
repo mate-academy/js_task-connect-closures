@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable */
+
 const connect = require('./connect');
 
 describe('Basic scenario', () => {

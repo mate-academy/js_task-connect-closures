@@ -20,7 +20,21 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const result = { ...params };
+
+  return function(obj) {
+    if (obj === undefined) {
+      return result;
+    }
+
+    for (const key in obj) {
+      if (!result.hasOwnProperty(key) || result[key] < obj[key]) {
+        result[key] = obj[key];
+      }
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

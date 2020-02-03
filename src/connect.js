@@ -20,7 +20,18 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let prevObj = { ...params };
+
+  return function(obj) {
+    prevObj = {
+      ...prevObj,
+      ...obj,
+    };
+
+    return {
+      ...prevObj,
+    };
+  };
 }
 
 module.exports = connect;

@@ -19,10 +19,9 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params = {}) {
-  return (enotherParams = {}) => ({
+const connect = (params = {}) =>
+  (enotherParams = {}) => ({
     ...params, ...enotherParams,
   });
-}
 
 module.exports = connect;

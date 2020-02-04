@@ -21,11 +21,9 @@
  */
 function connect(params) {
   return function(extraParams) {
-    const newObject = {
+    return {
       ...params, ...extraParams,
     };
-
-    return newObject;
   };
 }
 

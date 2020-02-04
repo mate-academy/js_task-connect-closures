@@ -20,7 +20,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let bufferedObject = { ...params };
+
+  return function connected(object) {
+    bufferedObject = {
+      ...bufferedObject, ...object,
+    };
+
+    return bufferedObject;
+  };
 }
 
 module.exports = connect;

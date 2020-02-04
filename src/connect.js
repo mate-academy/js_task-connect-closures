@@ -20,8 +20,7 @@
  * @return {Function}
  */
 function connect(params) {
-  const object = { ...arguments[0] };
-  const extraObj = { ...object };
+  const extraObj = { ...params };
 
   function addParams(newObj) {
     for (const key in newObj) {

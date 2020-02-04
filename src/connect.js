@@ -20,7 +20,20 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  // console.log(`params = ${params}`);
+  let result = {};
+
+  return function(params2) {
+    if (params === undefined && params2 === undefined) {
+      return result;
+    } else if (arguments.length === 0) {
+      return params;
+    } else if (arguments.length > 0) {
+      result = Object.assign({}, params, params2);
+
+      return result;
+    }
+  };
 }
 
 module.exports = connect;

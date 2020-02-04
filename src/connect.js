@@ -20,14 +20,10 @@
  * @return {Function}
  */
 function connect(params) {
-  let obj = { ...params };
-
   return function(extra) {
-    obj = {
-      ...obj, ...extra,
+    return {
+      ...params, ...extra,
     };
-
-    return obj;
   };
 };
 

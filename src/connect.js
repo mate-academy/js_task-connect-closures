@@ -23,9 +23,9 @@ function connect(params) {
   const baseParams = ({ ...params });
 
   return function(extraParams) {
-    const result = Object.assign(baseParams, extraParams);
+    const genericObject = Object.assign(baseParams, extraParams);
 
-    return result;
+    return genericObject;
   };
 }
 

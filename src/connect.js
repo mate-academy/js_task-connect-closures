@@ -20,7 +20,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let cache = { ...params };
+
+  return function(obj) {
+    cache = {
+      ...params, ...obj,
+    };
+
+    return cache;
+  };
 }
 
 module.exports = connect;

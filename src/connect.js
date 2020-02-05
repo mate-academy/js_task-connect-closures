@@ -20,7 +20,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
-}
+  function extra(mewObj) {
+    const objExtra = {
+      ...params, ...mewObj,
+    };
+
+    return objExtra;
+  };
+
+  return extra;
+};
 
 module.exports = connect;

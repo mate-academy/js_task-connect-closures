@@ -20,14 +20,14 @@
  * @return {Function}
  */
 function connect(params) {
-  const newObj = params ? Object.assign({}, params) : {};
+  const newObj = Object.assign({}, params);
 
   const func = args => {
     if (!params && !args) {
       return {};
     };
 
-    return args ? Object.assign(newObj, args) : params;
+    return Object.assign(newObj, args);
   };
 
   return func;

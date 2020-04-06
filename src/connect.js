@@ -20,7 +20,14 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const storedParams = params;
+
+  return function(x) {
+    return {
+      ...storedParams,
+      ...x,
+    };
+  };
 }
 
 module.exports = connect;

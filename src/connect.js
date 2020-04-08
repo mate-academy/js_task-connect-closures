@@ -21,6 +21,13 @@
  */
 function connect(params) {
   // write code here
+  const device = (extraParams) => {
+    const x = Object.assign({}, params, extraParams);
+
+    return x;
+  };
+
+  return device;
 }
 
 module.exports = connect;

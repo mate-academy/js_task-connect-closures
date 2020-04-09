@@ -20,7 +20,19 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  function device(obj) {
+    const result = {
+      ...params
+    };
+
+    for (let key in obj) {
+      result[key] = obj[key];
+    }
+
+    return result;
+  }
+  
+  return device;
 }
 
 module.exports = connect;

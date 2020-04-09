@@ -14,13 +14,22 @@
  *
  * const connected1 = connect({ x: 1, y: 2 });
  * const result1 = connected1();
- * result1 is { x: 1, y: 2 }
+   * result1 is { x: 1, y: 2 }
  *
  * @param {Object} baseParams
  * @return {Function}
  */
 function connect(params) {
   // write code here
+  const result = { ...params };
+
+  return (extraParams) => {
+    for (const value in extraParams) {
+      result[value] = extraParams[value];
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

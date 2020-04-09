@@ -16,11 +16,13 @@
  * const result1 = connected1();
  * result1 is { x: 1, y: 2 }
  *
- * @param {Object} baseParams
+ * @param {Object} params
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const clone = Object.assign({}, params);
+
+  return (extra = {}) => Object.assign(clone, extra);
 }
 
 module.exports = connect;

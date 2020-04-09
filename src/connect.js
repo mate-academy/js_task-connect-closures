@@ -19,8 +19,14 @@
  * @param {Object} baseParams
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(inishualParams) {
+  let res = { ...inishualParams };
+
+  const pushedParams = (params) => {
+    return (res = Object.assign(res, params));
+  };
+
+  return pushedParams;
 }
 
 module.exports = connect;

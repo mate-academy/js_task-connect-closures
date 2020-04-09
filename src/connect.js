@@ -20,7 +20,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const result = { ...params };
+
+  return function(arg) {
+    for (const key in arg) {
+      result[key] = arg[key];
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

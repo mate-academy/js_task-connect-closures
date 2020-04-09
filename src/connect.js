@@ -20,7 +20,16 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  let result = { ...params };
+
+  return function(obj) {
+    result = {
+      ...params,
+      ...obj,
+    };
+
+    return result;
+  };
 }
 
 module.exports = connect;

@@ -21,7 +21,13 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  return function device(...extraParams) {
+    const result = {};
+
+    Object.assign(result, params, ...extraParams);
+
+    return result;
+  };
 }
 
 module.exports = connect;

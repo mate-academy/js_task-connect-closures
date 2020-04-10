@@ -21,7 +21,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const copyObj = { ...params };
+
+  return (extraParams) => {
+    for (const key in extraParams) {
+      copyObj[key] = extraParams[key];
+    }
+
+    return copyObj;
+  };
 }
 
 module.exports = connect;

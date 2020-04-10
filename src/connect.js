@@ -17,6 +17,7 @@
  * result1 is { x: 1, y: 2 }
  *
  * @param {Object} baseParams
+ *
  * @return {Function}
  */
 function connect(params) {

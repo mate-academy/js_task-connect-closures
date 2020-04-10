@@ -20,8 +20,12 @@
  *
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(baseParams) {
+  return function(extraParams) {
+    return extraParams ? {
+      ...baseParams, ...extraParams,
+    } : { ...baseParams };
+  };
 }
 
 module.exports = connect;

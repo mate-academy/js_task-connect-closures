@@ -3,8 +3,14 @@
 const connect = require('./connect');
 
 describe('Basic scenario', () => {
-  const baseParams = { x: 1, y: 2 };
-  const extraParams = { z: 3, x: 10 };
+  const baseParams = {
+    x: 1,
+    y: 2,
+  };
+  const extraParams = {
+    z: 3,
+    x: 10,
+  };
   let connected;
 
   beforeEach(() => {
@@ -12,23 +18,34 @@ describe('Basic scenario', () => {
   });
 
   test('should return expected object', () => {
-    expect(connected(extraParams))
-      .toStrictEqual({ x: 10, y: 2, z: 3 });
+    expect(connected(extraParams)).toStrictEqual({
+      x: 10,
+      y: 2,
+      z: 3,
+    });
   });
 
   test('should not change baseParams', () => {
-    expect(baseParams)
-      .toStrictEqual({ x: 1, y: 2 });
+    expect(baseParams).toStrictEqual({
+      x: 1,
+      y: 2,
+    });
   });
 
   test('should not change extraParams', () => {
-    expect(extraParams)
-      .toStrictEqual({ z: 3, x: 10 });
+    expect(extraParams).toStrictEqual({
+      z: 3,
+      x: 10,
+    });
   });
 });
 
 describe('Without baseParams', () => {
-  const extraParams = { x: 1, y: 2, z: 3 };
+  const extraParams = {
+    x: 1,
+    y: 2,
+    z: 3,
+  };
   let connected;
 
   beforeEach(() => {
@@ -36,18 +53,27 @@ describe('Without baseParams', () => {
   });
 
   test('should return expected object', () => {
-    expect(connected(extraParams))
-      .toStrictEqual({ x: 1, y: 2, z: 3 });
+    expect(connected(extraParams)).toStrictEqual({
+      x: 1,
+      y: 2,
+      z: 3,
+    });
   });
 
   test('should not change extraParams', () => {
-    expect(extraParams)
-      .toStrictEqual({ x: 1, y: 2, z: 3 });
+    expect(extraParams).toStrictEqual({
+      x: 1,
+      y: 2,
+      z: 3,
+    });
   });
 });
 
 describe('Without extraParams', () => {
-  const baseParams = { x: 1, y: 2 };
+  const baseParams = {
+    x: 1,
+    y: 2,
+  };
   let connected;
 
   beforeEach(() => {
@@ -55,13 +81,17 @@ describe('Without extraParams', () => {
   });
 
   test('should return expected object', () => {
-    expect(connected())
-      .toStrictEqual({ x: 1, y: 2 });
+    expect(connected()).toStrictEqual({
+      x: 1,
+      y: 2,
+    });
   });
 
   test('should not change baseParams', () => {
-    expect(baseParams)
-      .toStrictEqual({ x: 1, y: 2 });
+    expect(baseParams).toStrictEqual({
+      x: 1,
+      y: 2,
+    });
   });
 });
 
@@ -73,7 +103,6 @@ describe('No baseParams with no extraParams', () => {
   });
 
   test('should return empty object', () => {
-    expect(connected())
-      .toStrictEqual({ });
+    expect(connected()).toStrictEqual({});
   });
 });

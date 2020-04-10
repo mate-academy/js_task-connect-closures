@@ -21,7 +21,17 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const startParams = params;
+
+  return function(additionParams) {
+    const endParams = { ...startParams };
+
+    for (const key in additionParams) {
+      endParams[key] = additionParams[key];
+    }
+
+    return endParams;
+  };
 }
 
 module.exports = connect;

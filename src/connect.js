@@ -20,7 +20,16 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const origObj = params;
+
+  return function(params1) {
+    const modObj = {
+      ...origObj,
+      ...params1,
+    };
+
+    return modObj;
+  };
 }
 
 module.exports = connect;

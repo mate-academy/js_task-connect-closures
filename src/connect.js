@@ -21,7 +21,17 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  return function(extraparams) {
+    const deviceParams = { ...extraparams };
+
+    for (const key in params) {
+      if (!(key in deviceParams)) {
+        deviceParams[key] = params[key];
+      }
+    }
+
+    return deviceParams;
+  };
 }
 
 module.exports = connect;

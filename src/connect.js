@@ -22,6 +22,15 @@
  */
 function connect(params) {
   // write code here
+  let result = {};
+
+  if (params !== undefined) {
+    result = Object.assign(result, params);
+  }
+
+  return (param) => {
+    return Object.assign(result, param);
+  };
 }
 
 module.exports = connect;

@@ -20,8 +20,20 @@
  *
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(base) {
+  const extraParams = (extra) => {
+    const result = {
+      ...base,
+    };
+
+    for (const key in extra) {
+      result[key] = extra[key];
+    }
+
+    return result;
+  };
+
+  return extraParams;
 }
 
 module.exports = connect;

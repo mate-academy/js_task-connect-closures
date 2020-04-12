@@ -21,7 +21,12 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  return function(obj) {
+    return {
+      ...params,
+      ...obj,
+    };
+  };
 }
 
 module.exports = connect;

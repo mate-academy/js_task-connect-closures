@@ -21,16 +21,12 @@
  * @return {Function}
  */
 function connect(params) {
-  const startParams = params;
+  const obj = { ...params };
 
-  return function(additionParams) {
-    const endParams = { ...startParams };
+  return function(extra) {
+    Object.assign(obj, extra);
 
-    for (const key in additionParams) {
-      endParams[key] = additionParams[key];
-    }
-
-    return endParams;
+    return obj;
   };
 }
 

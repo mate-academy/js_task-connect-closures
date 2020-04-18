@@ -21,7 +21,15 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const obj = Object.assign({}, params);
+
+  return function(args) {
+    for (const key in args) {
+      obj[key] = args[key];
+    }
+
+    return obj;
+  };
 }
 
 module.exports = connect;

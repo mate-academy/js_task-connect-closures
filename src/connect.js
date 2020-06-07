@@ -22,6 +22,12 @@
  */
 function connect(params) {
   // write code here
+  return (extraParams) => (
+    {
+      ...params,
+      ...extraParams,
+    }
+  );
 }
 
 module.exports = connect;

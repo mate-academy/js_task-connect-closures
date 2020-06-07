@@ -21,12 +21,8 @@
  * @return {Function}
  */
 function connect(baseParams = {}) {
-  let resultParams = {};
-
   return function(extraParams = {}) {
-    resultParams = Object.assign({}, baseParams, extraParams);
-
-    return resultParams;
+    return Object.assign({}, baseParams, extraParams);
   };
 }
 

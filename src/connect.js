@@ -1,5 +1,5 @@
 'use strict';
-/* eslint-disable */
+
 /**
  * Write a function (factory) accepting `baseParams` object and creating a
  * function (device). Device receives `extraParams` and returns an object with
@@ -21,10 +21,11 @@
  * @return {Function}
  */
 function connect(paramsFirst) {
-
   return (paramsSecond) => {
-    return { ...paramsFirst, ...paramsSecond};
-  }
+    return {
+      ...paramsFirst, ...paramsSecond,
+    };
+  };
 }
 
 module.exports = connect;

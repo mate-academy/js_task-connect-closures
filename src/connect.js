@@ -20,8 +20,22 @@
  *
  * @return {Function}
  */
-function connect(params) {
-  // write code here
+function connect(params = {}) {
+  const result = Object.assign({}, params);
+
+  return function(extraParams = {}) {
+    if (extraParams !== undefined) {
+      for (const key in extraParams) {
+        if (result.hasOwnProperty(key)) {
+          result[key] = extraParams[key];
+        } else {
+          result[key] = extraParams[key];
+        }
+      }
+    }
+
+    return result;
+  };
 }
 
 module.exports = connect;

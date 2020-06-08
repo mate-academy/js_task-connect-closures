@@ -21,7 +21,19 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  const extraParams = (extra) => {
+    const result = {
+      ...params,
+    };
+
+    for (const key in extra) {
+      result[key] = extra[key];
+    }
+
+    return result;
+  };
+
+  return extraParams;
 }
 
 module.exports = connect;

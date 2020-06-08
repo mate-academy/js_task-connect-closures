@@ -20,16 +20,10 @@
  *
  * @return {Function}
  */
-function connect(params) {
-  let result;
+function connect(params = {}) {
+  const result = Object.assign({}, params);
 
-  if (params !== undefined) {
-    result = Object.assign({}, params);
-  } else {
-    result = {};
-  }
-
-  return function(extraParams) {
+  return function(extraParams = {}) {
     if (extraParams !== undefined) {
       for (const key in extraParams) {
         if (result.hasOwnProperty(key)) {

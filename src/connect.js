@@ -20,8 +20,17 @@
  *
  * @return {Function}
  */
-function connect(params) {
-  // write code here
-}
+function connect(params = {}) {
+  const clonedParams = { ...params };
 
+  return (extraParams) => {
+    if (extraParams) {
+      for (const [key, value] of Object.entries(extraParams)) {
+        clonedParams[key] = value;
+      }
+    }
+
+    return clonedParams;
+  };
+}
 module.exports = connect;

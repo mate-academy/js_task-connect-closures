@@ -24,15 +24,10 @@ function connect(params) {
   const baseParams = { ...params };
 
   return function(extraParams) {
-    if (extraParams === undefined) {
-      return baseParams;
-    } else {
-      for (const key of Object.keys(extraParams)) {
-        baseParams[key] = extraParams[key];
-      }
-    }
-
-    return baseParams;
+    return {
+      ...baseParams,
+      ...extraParams,
+    };
   };
 }
 

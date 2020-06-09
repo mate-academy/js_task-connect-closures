@@ -25,7 +25,9 @@
  */
 function connect(baseParams) {
   return (extraParams) => {
-    return Object.assign({}, { ...baseParams }, { ...extraParams });
+    return {
+      ...baseParams, ...extraParams,
+    };
   };
 }
 

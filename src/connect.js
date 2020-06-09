@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Write a function (factory) accepting `baseParams` object and creating a

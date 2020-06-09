@@ -22,7 +22,10 @@
  */
 function connect(baseParams = {}) {
   return function(extraParams = {}) {
-    return Object.assign({}, baseParams, extraParams);
+    return {
+      ...baseParams,
+      ...extraParams,
+    };
   };
 }
 

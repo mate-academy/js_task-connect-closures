@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Write a function (factory) accepting `baseParams` object and creating a
@@ -15,12 +15,15 @@
  * const connected1 = connect({ x: 1, y: 2 });
  * const result1 = connected1();
  * result1 is { x: 1, y: 2 }
+ * 
+ * Consider using the spread operator
+ * https://javascript.info/rest-parameters-spread
  *
  * @param {Object} baseParams
  *
  * @return {Function}
  */
-function connect(params) {
+function connect(baseParams) {
   // write code here
 }
 

@@ -21,14 +21,10 @@
  * @return {Function}
  */
 function connect(params) {
-  const resultParams = { ...params };
-
   return (extra) => {
-    for (const key in extra) {
-      resultParams[key] = extra[key];
-    }
-
-    return resultParams;
+    return {
+      ...params, ...extra,
+    };
   };
 }
 

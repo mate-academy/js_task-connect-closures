@@ -21,7 +21,10 @@
  * @return {Function}
  */
 function connect(params) {
-  // write code here
+  return argument => ({
+    ...params,
+    ...argument,
+  });
 }
 
 module.exports = connect;

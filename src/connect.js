@@ -24,9 +24,9 @@
  * @return {Function}
  */
 function connect(baseParams) {
-  return n => ({
+  return extraParams => ({
     ...baseParams,
-    ...n,
+    ...extraParams,
   });
 }
 module.exports = connect;

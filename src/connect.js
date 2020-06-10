@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 /**
@@ -15,7 +16,7 @@
  * const connected1 = connect({ x: 1, y: 2 });
  * const result1 = connected1();
  * result1 is { x: 1, y: 2 }
- * 
+ *
  * Consider using the spread operator
  * https://javascript.info/rest-parameters-spread
  *
@@ -24,7 +25,10 @@
  * @return {Function}
  */
 function connect(baseParams) {
-  // write code here
+  return connector => ({
+    ...baseParams,
+    ...connector,
+  });
 }
 
 module.exports = connect;

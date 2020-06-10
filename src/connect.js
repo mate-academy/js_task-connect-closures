@@ -25,20 +25,10 @@
  * @return {Function}
  */
 function connect(baseParams) {
-  return function(connector) {
-    const allValues = {};
-
-    for (const [key, value] of Object.entries(
-      {
-        ...baseParams,
-        ...connector,
-      }
-    )) {
-      allValues[key] = value;
-    }
-
-    return allValues;
-  };
+  return connector => ({
+    ...baseParams,
+    ...connector,
+  });
 }
 
 module.exports = connect;

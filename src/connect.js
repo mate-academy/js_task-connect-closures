@@ -25,6 +25,16 @@
  */
 function connect(baseParams) {
   // write code here
+  const obj = {};
+  for (const key in params) {
+    obj[key] = params[key];
+  }
+  return (params2) => {
+    for (const key in params2) {
+      obj[key] = params2[key];
+    }
+    return obj;
+  };
 }
 
 module.exports = connect;

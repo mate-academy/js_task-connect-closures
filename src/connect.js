@@ -25,6 +25,7 @@
  */
 function connect(baseParams) {
   // write code here
+  return (newParams) => ({ ...params, ...newParams });
 }
 
 module.exports = connect;

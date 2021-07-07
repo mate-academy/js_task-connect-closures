@@ -25,6 +25,18 @@
  */
 function connect(baseParams) {
   // write code here
+  const baseParams = Object.assign({}, params);
+
+  return function(extraParams) {
+    if (extraParams === undefined) {
+    } else {
+      for (const key of Object.keys(extraParams)) {
+        baseParams[key] = extraParams[key];
+      }
+    }
+
+    return baseParams;
+  };
 }
 
 module.exports = connect;

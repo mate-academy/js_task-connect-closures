@@ -25,6 +25,14 @@
  */
 function connect(baseParams) {
   // write code here
+  const object = { ...params };
+  let secondObject = {};
+
+  return function(extraParams) {
+    secondObject = Object.assign({}, object, extraParams);
+
+    return secondObject;
+  };
 }
 
 module.exports = connect;
